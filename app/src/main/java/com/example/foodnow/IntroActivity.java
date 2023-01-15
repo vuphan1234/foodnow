@@ -1,8 +1,11 @@
 package com.example.foodnow;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -10,5 +13,14 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+
+        ConstraintLayout startBtn = findViewById(R.id.btnCLick);
+        startBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(IntroActivity.this, MainActivity.class));
+            }
+        });
+
     }
 }
